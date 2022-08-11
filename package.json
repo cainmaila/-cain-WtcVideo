@@ -1,6 +1,6 @@
 {
   "name": "cain-wtc-video",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "WebRTC",
   "main": "./WTCVideo/ndex.ts",
   "repository": "https://github.com/cainmaila/-cain-WtcVideo.git",
