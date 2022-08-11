@@ -1,5 +1,5 @@
 {
-  "name": "@cain/WtcVideo",
+  "name": "cain-wtc-video",
   "version": "1.0.1",
   "description": "WebRTC",
   "main": "index.ts",
