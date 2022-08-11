@@ -5,7 +5,7 @@ import qs from 'qs'
 import html2canvas from 'html2canvas'
 import React from 'react'
 
-export const rtspSetting = {
+const rtspSetting = {
   iceconfig: {
     iceServers: [
       {
@@ -13,7 +13,7 @@ export const rtspSetting = {
       },
     ],
   },
-  server: '',
+  server: '/stream',
 }
 
 type Props = {
