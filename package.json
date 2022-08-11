@@ -1,0 +1,22 @@
+{
+  "name": "@cain/WtcVideo",
+  "version": "1.0.0",
+  "description": "WebRTC",
+  "main": "index.ts",
+  "repository": "https://github.com/cainmaila/-cain-WtcVideo.git",
+  "author": "cain <cainmaila@gmail.com>",
+  "license": "BSD",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "html2canvas": "^1.4.1",
+    "qs": "^6.11.0"
+  },
+  "devDependencies": {
+    "@types/qs": "^6.9.7",
+    "@types/react": "^18.0.17",
+    "@types/react-dom": "^18.0.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^4.7.4"
+  }
+}
