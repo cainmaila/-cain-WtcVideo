@@ -8,8 +8,10 @@ declare class WTCVideo extends React.Component<I_WTCVideoRefProps, any> {}
 
 declare module 'WTCVideo' {}
 
-export default WTCVideo
-export interface rtspSetting {
+declare interface rtspSetting {
   iceconfig: unknown
   server: string
 }
+
+export default WTCVideo
+export const rtspSetting
