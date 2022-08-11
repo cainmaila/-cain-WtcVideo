@@ -1,3 +1,2 @@
-import WTCVideo, { rtspSetting as setting } from './WTCVideo'
+import WTCVideo from './WTCVideo'
 export default WTCVideo
-export const rtspSetting = setting
