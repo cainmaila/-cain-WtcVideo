@@ -12,14 +12,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.rtspSetting = void 0;
 const react_1 = require("react");
 const react_2 = require("react");
 const axios_1 = __importDefault(require("axios"));
 const qs_1 = __importDefault(require("qs"));
 const html2canvas_1 = __importDefault(require("html2canvas"));
 const react_3 = __importDefault(require("react"));
-exports.rtspSetting = {
+const rtspSetting = {
     iceconfig: {
         iceServers: [
             {
@@ -27,13 +26,13 @@ exports.rtspSetting = {
             },
         ],
     },
-    server: '',
+    server: '/stream',
 };
 const WTCVideo = ({ suuid, hidden, onPlay, muted }, ref) => {
     const videoElemRef = (0, react_1.useRef)(null);
     (0, react_2.useEffect)(() => {
         const stream = new MediaStream();
-        const pc = new RTCPeerConnection(exports.rtspSetting.iceconfig);
+        const pc = new RTCPeerConnection(rtspSetting.iceconfig);
         pc.onnegotiationneeded = handleNegotiationNeededEvent;
         pc.ontrack = (event) => {
             stream.addTrack(event.track);
@@ -81,7 +80,7 @@ const WTCVideo = ({ suuid, hidden, onPlay, muted }, ref) => {
 };
 exports.default = (0, react_1.forwardRef)(WTCVideo);
 function getCodecInfo(pc, suuid) {
-    axios_1.default.get(`${exports.rtspSetting.server}/codec/${suuid}`).then((response) => {
+    axios_1.default.get(`${rtspSetting.server}/codec/${suuid}`).then((response) => {
         const data = response.data;
         try {
             data.forEach((data) => {
@@ -101,7 +100,7 @@ function getRemoteSdp(pc, suuid) {
         return;
     }
     axios_1.default
-        .post(`${exports.rtspSetting.server}/receiver/${suuid}`, {
+        .post(`${rtspSetting.server}/receiver/${suuid}`, {
         suuid: suuid,
         data: btoa(pc.localDescription.sdp),
     }, {

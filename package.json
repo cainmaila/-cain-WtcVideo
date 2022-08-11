@@ -1,6 +1,6 @@
 {
   "name": "cain-wtc-video",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "WebRTC",
   "main": "./index.ts",
   "repository": "https://github.com/cainmaila/-cain-WtcVideo.git",
