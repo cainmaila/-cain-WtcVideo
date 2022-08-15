@@ -91,18 +91,23 @@ interface I_typeData {
 }
 
 function getCodecInfo(pc: RTCPeerConnection, suuid: string) {
-  axios.get(`${rtspSetting.server}/codec/${suuid}`).then((response) => {
-    const data = response.data
-    try {
-      data.forEach((data: I_typeData) => {
-        pc.addTransceiver(data.Type, {
-          direction: 'sendrecv',
+  axios
+    .get(`${rtspSetting.server}/codec/${suuid}`)
+    .then((response) => {
+      const data = response.data
+      try {
+        data.forEach((data: I_typeData) => {
+          pc.addTransceiver(data.Type, {
+            direction: 'sendrecv',
+          })
         })
-      })
-    } catch (e) {
-      console.warn('不通喔....', suuid)
-    }
-  })
+      } catch (e) {
+        console.warn('不通喔....', suuid)
+      }
+    })
+    .catch((err) => {
+      console.error(err)
+    })
 }
 
 function getRemoteSdp(pc: RTCPeerConnection, suuid: string) {

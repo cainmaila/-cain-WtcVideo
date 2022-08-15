@@ -80,7 +80,9 @@ const WTCVideo = ({ suuid, hidden, onPlay, muted }, ref) => {
 };
 exports.default = (0, react_1.forwardRef)(WTCVideo);
 function getCodecInfo(pc, suuid) {
-    axios_1.default.get(`${rtspSetting.server}/codec/${suuid}`).then((response) => {
+    axios_1.default
+        .get(`${rtspSetting.server}/codec/${suuid}`)
+        .then((response) => {
         const data = response.data;
         try {
             data.forEach((data) => {
@@ -92,6 +94,9 @@ function getCodecInfo(pc, suuid) {
         catch (e) {
             console.warn('不通喔....', suuid);
         }
+    })
+        .catch((err) => {
+        console.error(err);
     });
 }
 function getRemoteSdp(pc, suuid) {
