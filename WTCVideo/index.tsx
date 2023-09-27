@@ -13,7 +13,7 @@ const rtspSetting = {
       },
     ],
   },
-  server: '/stream',
+  server: '/vdo/stream',
 }
 
 type Props = {
