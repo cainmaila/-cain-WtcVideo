@@ -26,7 +26,7 @@ const rtspSetting = {
             },
         ],
     },
-    server: '/stream',
+    server: '/vdo/stream',
 };
 const WTCVideo = ({ suuid, hidden, onPlay, muted }, ref) => {
     const videoElemRef = (0, react_1.useRef)(null);
