@@ -121,7 +121,7 @@ function getRemoteSdp(pc, suuid) {
         },
     })
         .then((response) => {
-        const data = response.data;
+        const data = {dsp:response.data};
         try {
             if (pc.signalingState === 'closed')
                 return;
